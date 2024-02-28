@@ -16,6 +16,12 @@ const checkNumberIsValid = (input) => {
     return true;
 };
 
+const selectedDiv = (div) => {
+    div.addEventListener("click", () => {
+        div.classList.toggle("dark-background");
+    });
+};
+
 const setElementsOfTable = (size) => {
     let tableSize = size ** 2;
     while (tableSize > 0) {
@@ -24,6 +30,7 @@ const setElementsOfTable = (size) => {
         let divWidth = 960 / size;
         divElement.style.width = `${divWidth}px`;
         bigContainerElement.appendChild(divElement);
+        selectedDiv(divElement);
         tableSize--;
     }
 };
